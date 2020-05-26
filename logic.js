@@ -41,6 +41,35 @@ function getQuestion() {
 //get the current question object 
 var curremtQuestion = questions[currentQuestionIndex];
 
+//update title with question
+
+var titleEl = document.getElementById("question-title");
+titleEl.textContent = curremtQuestion.title;
+
+// clear old question choices
+
+choicesEl.innerHTML = "";
+
+//loop over answers
+
+currentQuestion.choices.forEach(function(choice, i) {
+    // create button for each answer
+    var choiceNode = document.createElement("button");
+    choiceNode.setAttribute("class", "choice");
+    choiceNode.setAttribute("value", choice);
+
+    choiceNode.setAttribute("class", "choice");
+    choiceNode.setAttribute("value",choice);
+
+    choiceNode.textContent = i + 1 + "." + choice;
+
+    //attach click event listener to answers
+    choiceNode.onclick = questionClick;
+
+    //display on page
+    choicesEl.appendChild(choiceNode);
+});
+
 
 
 
