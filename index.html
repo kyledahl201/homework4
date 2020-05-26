@@ -16,7 +16,7 @@
     <!-- main div -->
     <div class="wrapper">
 
-        <div id="start-screen" class="start">
+        <div id="start-screen" class="begin">
             <h1>Web Development Quiz</h1>
 
             <p>
@@ -25,12 +25,32 @@
                      Good luck!
 
             </p>
-            <button class="start">Begin!</button>
-
-
-
-
+            <button class="begin">Begin!</button>
         </div>
+
+            <div class="hide" id="questions">
+                <h2 id="question-title"></h2>
+                <div class="choices" id="choices"></div>
+            </div>
+
+                <div class="hide" id="end-screen">
+                        <h2>Quiz completed</h2>
+                        <p>Your final score is: 
+                            <span id="final-score"></span>
+                        .
+                    </p>
+
+                    <p>
+                        Enter initials: <input type="text" id="initials" max="3">
+                        <button id="submit">Submit</button>
+                    </p>
+
+
+
+                </div>
+
+                    
+        
 
 
 
