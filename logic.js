@@ -173,6 +173,21 @@ window.location.href = "highscores.html";
     }
 
 
+    function checkForEnter(event) {
+            if (event.key === "Enter") {
+                saveHighscore();
+            }
+    }
+
+    //click button to submit initials 
+
+    submitBtn.onclick = saveHighscore;
+
+    // user clicks button to start the quiz
+
+    startBtn.onclick = startQuiz;
+
+    initialsEl.onkeyup = checkForEnter;
 
 
 
