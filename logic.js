@@ -70,6 +70,61 @@ currentQuestion.choices.forEach(function(choice, i) {
     choicesEl.appendChild(choiceNode);
 });
 
+}
+
+//questionclick function
+
+function questionClick() {
+
+//check if the answer is wrong 
+
+if (this.value !== questions[currentQuestionIndex].answer) {
+//time penalty 
+time -= 15;
+
+if (time < 0) {
+time = 0;
+
+}
+ 
+//display new time 
+timerEl.textContent = time;
+
+feedbackEl.textContent = "Wrong!";
+
+}
+
+// flash right or wrong
+feedbackEl.setAttribute("class", "feedback");
+setTimeout(function(){
+    feedbackEl.setAttribute("class", "feedback hide");
+    
+}, 1000);
+
+//add to loop to go to next question
+
+currentQuestionIndex++;
+
+//check if there are more questions
+
+if (currentQuestionIndex === questions.length) {
+    quizEnd();
+} else {
+    getQuestion();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -77,3 +132,6 @@ currentQuestion.choices.forEach(function(choice, i) {
 
 
 }
+
+
+
